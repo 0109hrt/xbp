@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <!-- ⑥↓タイトルを変えてみよう -->
+    <title>第３回</title>
+    <!-- ⑤スタイルシートの設定をしよう -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- h1.htmlからある行をコピペしてくればOK -->
+</head>
+<body>
+    <h1>第5回</h1>
+    <div>
+        <h2>pythonを使った簡易的なゲーム作成課題</h2>
+        <div>
+            ＜今回作ったゲームの概要＞
+            選択式ゲーム。(問題三問・各選択三つずつ)<br>
+            ゲームテーマ「単位が取得できるかどうかが決まる最終日に、学校で起こる色々な事件を回避しながら遅刻せずに道用先生の授業に出席しよう！！」<br>
+            if文を多く使ったゲームとなっている。
+
+        </div>
+        <div>
+            <code>
+                <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;color:#000;">
+                <li style="background-color:#EFF;">print("君は神奈川大学に通う大学１年生！")</li>
+                <li style="background-color:#EEF;">name=input("あなたの名前は？")</li>
+                <li style="background-color:#EFF;"></li>
+                <li style="background-color:#EEF;">print("今、",name,"は７Fの食堂で昼食を食べ終えたところ。"</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"この後３限がある",name,"は、F18に行きたい。")</li>
+                <li style="background-color:#EEF;"></li>
+                <li style="background-color:#EFF;">print("F18にいきたいが、エスカレーターが故障していて使えない。さらにエレベーターホールに行ったらたくさんの人が。\nこのとき",name,"はどうする？")</li>
+                <li style="background-color:#EEF;"></li>
+                <li style="background-color:#EFF;">choices=input("a,非常階段を使う。\nb,近くにいる清掃員に話しかける。\nc,割り込んで先にエレベーターに乗る。\n(※a~cのどれかを入力してね！)\n解答：")</li>
+                <li style="background-color:#EEF;"></li>
+                <li style="background-color:#EFF;">if choices=="a":</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;print("非常階段に巨大ゴリラが現れて、暴れ始めた！？これじゃ前に進めない！！→GAME OVER")</li>
+                <li style="background-color:#EFF;"></li>
+                <li style="background-color:#EEF;">elif choices == "b" or choices == "ｂ":</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;print("清掃員の叔父さんが「清掃員専用の秘密のエレベーター」を教えてくれた！！あなたは無事に18階にたどり着くことができた!!何とか授業には間に合いそうだ！と思ったら…")</li>
+                <li style="background-color:#EEF;"></li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;print("教室前にいた知り合いの先輩に絡まれてしまった…！どうやらすぐに終わる話ではなさそうだ…。けれど、もうすぐ授業が始まってしまう。\nこのとき",name,"はどうする？")</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;choices =input("a,蹴る。\nb,無視する。\nc,誘いに乗る。\n(※a~cのどれかを入力してね！)\n解答：")</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;if choices == "a":</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("先輩を蹴ってしまったが、運よく転んで気絶してくれたようだ。今のうちに教室に入ってしまおう…！")</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("教室に入ると、見たこともないほど怖い顔をした道用先生が教壇で待ち構えていた…！道用先生を倒さないとこの授業の単位はもらうことができない！\nこのとき",name,"はどうする？")</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;choices = input("a,エナジードリンクを捧げる。\nb,水かけてみる？？\nc,課題をやっているふりをする。\n(※a~cのどれかを入力してね！)\n解答：")</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if choices == "a":</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("エナジードリンクにより、先生のやる気が向上しすぎた結果、最終課題を大量に出されてしまった…！単位取得までの道のりは遠い…→GAME OVER")</li>
+                <li style="background-color:#EFF;"></li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elif choices == "b" or choices == "ｂ":</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("どうやら先生は「単位を絶対に取らせない」という呪いにかけられていたみたいで、水をかけられたことにより正気に戻ったようだ…！\n先生から大変感謝された",name,"は無事に単位を取得することができた！")</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("\n→GAME CLEAR!!!!")</li>
+                <li style="background-color:#EFF;"></li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elif choices == "c" or choices == "ｃ":</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("課題をやっているふりをしていたらボタンを間違えて、本日提出する予定だった課題データを全部消してしまった…！！もう授業が始まってしまう、間に合わない…！\n→GAME OVER")</li>
+                <li style="background-color:#EEF;"></li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;elif choices == "b":</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("怒った先輩に余計に絡まれた…！これじゃ遅刻確定だ…→\nGAME OVER")</li>
+                <li style="background-color:#EFF;"></li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;elif choices == "c":</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("誘いに乗って連れていかれたのは、居酒屋！一体いつ帰ることができるのやら…\n→GAME OVER")</li>
+                <li style="background-color:#EEF;">elif choices == "c" or choices == "ｃ":</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;print("乗ってる人が多く、エレベーターが各階に止まっていくことに。授業開始のチャイムが鳴り響いた…。\n→GAME OVER")</li>
+                </ol></code>
+        </div>
+    </div>
+
+   
+
+</body>
+</html>

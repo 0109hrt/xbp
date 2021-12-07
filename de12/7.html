@@ -10,37 +10,75 @@
 <body>
     <h1>第7回・第8回</h1>
     <div>
-       <h3>私がおすすめするエリア：横浜市南区</h3> 
+       <h3>＜私がおすすめするエリア：横浜市南区＞</h3> 
     </div>   
     <div>
         <div>
             私は、駅別での住みやすさを調べてみました。重視する住みやすさとして、「家賃」「乗換時間」「築年数」を基準にしました。<br>
         </div>
         <div>
-            こちらのグラフは家賃が安い順に50駅ほどあげたグラフです。そして下のグラフは、各駅の平均乗換時間です。<br>
-            <img src="images/yatin_norikae.png" width="50%"><br>
+            こちらの青グラフは家賃が安い順に50駅ほどあげたグラフです。そして下のオレンジグラフは、各駅の平均乗換時間です。<br>
+            ここから平均乗換時間が２０分程度の駅（右のグラフの青丸部分）を絞り込みます。
+            <img src="images/家賃グラフ.png" width="95%"><br>
         </div>
         <div>
-            この中で、平均乗換時間２０分程度の駅を書き出すと、<br>
-            【星川駅・南太田駅・弘明寺駅・井土ヶ谷駅・白楽駅・三ッ沢上町】があげられます。<br>  
+            そうすると以下の６駅、<br>
+            【星川駅・南太田駅・弘明寺駅・井土ヶ谷駅・白楽駅・三ッ沢上町】に絞られます。<br>  
         </div>
         <div>
             ここから、さらにこれらの駅にある物件の平均築年数を調べたところ次のように出ました。<br>
-            <img src="images/ekisuku.png" width="60%"><br>
-            <img src="images/ekisuku2.png" width="60%"><br>
-            <img src="images/ekisuku3.png" width="60%"><br>
-            <img src="images/ekisuku4.png" width="60%"><br>
+            <img src="images/築年数まとめ.png" width="60%"><br>
         </div>
         <div>
             これらの中で築年数が短かった上３つ「弘明寺駅・南太田駅・井土ヶ谷駅」は、どれも南区にある京急線の駅名だったことから、私は横浜市南区のエリアをおすすめします。 
         </div>
+        <h3>＜補足＞</h3>
         <div>
             ※良ければこちらもご覧ください。
             課題内容を勘違いして作ってしまった、おすすめエリアの資料です。
-            <a href="7の補足.html" target="_blank">南区のいいところまとめ</a>
-        </div>
-        <div>
+            <a href="7の補足.html" target="_blank">南区のいいところまとめ</a><br>
             ※発表時スライド　<a href="files/デザイン演習＿物件分析.pdf" target="_brank">スライドpdfファイル</a>
+        </div>
+        <h3>＜感想＞</h3>
+        <div>
+            かなり確実にエリアを絞っていくことができたように思う。
+            反省点はデータを絞って表示させるのが難しく、グラフ内の表示駅の数が多くなり見づらくなってしまった。
+        </div>
+        <h3>＜ソースコード＞</h3>
+        <div>
+            <code>
+                <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;color:#000;">
+                <li style="background-color:#EFF;">import pandas as pd  # データ分析に用いるライブラリ</li>
+                <li style="background-color:#EEF;">import matplotlib.pyplot as plt  # グラフ表示に用いるライブラリ</li>
+                <li style="background-color:#EFF;">pd.set_option('display.unicode.east_asian_width', True)  # 表示のずれを少し緩和</li>
+                <li style="background-color:#EEF;">plt.rcParams['font.family'] = 'IPAexGothic'  # グラフ表示におけるフォントの指定</li>
+                <li style="background-color:#EFF;"></li>
+                <li style="background-color:#EEF;"># おすすめエリアの紹介</li>
+                <li style="background-color:#EFF;"># 説得力を持たせるデータを利用</li>
+                <li style="background-color:#EEF;"># 名称・カテゴリー・アドレス・アクセス・路線・駅・バス停・乗り換え時間・バス・徒歩・車・合計時間・築年数・構造・階数・家賃・管理費・敷金・礼金・間取り・面積</li>
+                <li style="background-color:#EFF;"></li>
+                <li style="background-color:#EEF;"># haru.ta物件データ分析</li>
+                <li style="background-color:#EFF;">data_path = "./data.csv"</li>
+                <li style="background-color:#EEF;">df_data = pd.read_csv(data_path,  encoding="utf-8-sig")</li>
+                <li style="background-color:#EFF;"></li>
+                <li style="background-color:#EEF;">print(df_data.columns)</li>
+                <li style="background-color:#EFF;">print(df_data.groupby("駅").mean().loc[:, ["家賃", "合計時間"]])</li>
+                <li style="background-color:#EEF;"></li>
+                <li style="background-color:#EFF;"></li>
+                <li style="background-color:#EEF;">print(df_data.groupby("駅").mean().loc[:, ["家賃", "乗換時間"]].sort_values(by="家賃").iloc[0:50, :])</li>
+                <li style="background-color:#EFF;">print(df_data.groupby("駅").mean().loc[:, ["家賃", "乗換時間",]].sort_values(by="乗換時間").iloc[0:50, :])</li>
+                <li style="background-color:#EEF;"></li>
+                <li style="background-color:#EFF;"></li>
+                <li style="background-color:#EEF;">print(df_data.groupby("駅").mean().loc[:, ["家賃", "乗換時間","築年数"]].sort_values(by="家賃").iloc[0:50, :])</li>
+                <li style="background-color:#EFF;"></li>
+                <li style="background-color:#EEF;"></li>
+                <li style="background-color:#EFF;">df_mean = df_data.groupby("駅").mean().loc[:, ["家賃","乗換時間"]].sort_values(by="家賃").iloc[0:50, :]</li>
+                <li style="background-color:#EEF;">df_mean.plot.bar(legend=True,</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;subplots=True,</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;layout=(2,1),</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;figsize=(10,8))</li>
+                <li style="background-color:#EEF;">plt.show()</li>
+                </ol></code>
         </div>
     </div>
 

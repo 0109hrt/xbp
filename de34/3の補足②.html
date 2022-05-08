@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <!-- ⑥↓タイトルを変えてみよう -->
+    <title>向きが変わるプログラム</title>
+    <!-- ⑤スタイルシートの設定をしよう -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- h1.htmlからある行をコピペしてくればOK -->
+</head>
+<body>
+    <div>
+        <h2>向きが変わるプログラム</h2>
+        <div>
+            <code>
+                <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;color:#000;">
+                <li style="background-color:#EFF;">const int DIR  = 8;</li>
+                <li style="background-color:#EEF;">const int STEP = 9;</li>
+                <li style="background-color:#EFF;"></li>
+                <li style="background-color:#EEF;">void setup() {</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;pinMode(DIR, OUTPUT);</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;pinMode(STEP, OUTPUT);</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;digitalWrite(DIR, LOW);</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;digitalWrite(STEP, LOW);</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;Serial.begin(9600);</li>
+                <li style="background-color:#EEF;">}</li>
+                <li style="background-color:#EFF;"></li>
+                <li style="background-color:#EEF;">void loop() {</li>
+                <li style="background-color:#EFF;"></li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;int val=0;</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;val=analogRead(1);</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;Serial.println(val);</li>
+                <li style="background-color:#EFF;"></li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;for (int i=0; i &lt;= 50; i++)</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;if(200&lt;val){</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;clockwise(50000);</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;}</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;else</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;{</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;clockwise(5000);</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;}</li>
+                <li style="background-color:#EEF;">}</li>
+                <li style="background-color:#EFF;"></li>
+                <li style="background-color:#EEF;">void clockwise(int delaytime){</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;digitalWrite(DIR, HIGH);//HIGHは時計回り</li>
+                <li style="background-color:#EEF;"></li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;digitalWrite(STEP, HIGH);</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;delayMicroseconds(delaytime);</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;digitalWrite(STEP, LOW);</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;delayMicroseconds(delaytime);</li>
+                <li style="background-color:#EFF;"></li>
+                <li style="background-color:#EEF;">}</li>
+                <li style="background-color:#EFF;"></li>
+                <li style="background-color:#EEF;">void counter_clockwise(int delaytime){</li>
+                <li style="background-color:#EFF;"></li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;digitalWrite(DIR, LOW);//はLOWは反時計回り</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;digitalWrite(STEP, HIGH);</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;delayMicroseconds(delaytime);</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;digitalWrite(STEP, LOW);</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;delayMicroseconds(delaytime);</li>
+                <li style="background-color:#EFF;">}</li>
+                </ol></code>
+        </div>
+    </div>
+
+   
+
+</body>
+</html>

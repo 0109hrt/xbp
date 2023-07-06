@@ -21,16 +21,20 @@ logotohome img{
 
 
 /* ========== common ========== */
-html, body {
+body {
 	font-size: 16px;
 	font-family: sans-serif;
-	color: #393939;
-    margin-left: 15px;
+	color: #026c80;
+    margin-left: 40px;
     margin-bottom: 40px;
-	background: #efefef;
+    margin-top: 0px;
+	background: #f1eae0;
+
 }
 h1{
     text-indent: 0em;
+    text-align: center;
+    font-size: 20px;
 }
 h2{
     margin-left: 1em;
@@ -41,7 +45,7 @@ h3{
 }
 div{
     margin-top: 1em;
-    margin-left: 5em;
+    margin-left: 3em;
 }
 p{
     margin-left: 3em;
@@ -52,3 +56,18 @@ span.blackback{
     color: #efefef;
 }
 
+/*　↓　ヘッダー部分装飾*/
+header {
+    background-image: url(images/whiteheader.png);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-size: cover;
+    height: 400px;
+    width: 2000px;   
+    margin-left: 0px;
+}
+
+/*　↓　本体装飾*/
+body {
+    
+}
